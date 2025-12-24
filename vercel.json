@@ -1,0 +1,12 @@
+{
+  "rewrites": [
+    {
+      "source": "/app",
+      "destination": "https://astromic-app.vercel.app/"
+    },
+    {
+      "source": "/app/:path*",
+      "destination": "https://astromic-app.vercel.app/:path*"
+    }
+  ]
+}
