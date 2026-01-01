@@ -1,0 +1,34 @@
+<svg width="60" height="60" viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <defs>
+        <filter id="glow-multi">
+            <feGaussianBlur stdDeviation="1.5" result="coloredBlur"/>
+            <feMerge>
+                <feMergeNode in="coloredBlur"/>
+                <feMergeNode in="SourceGraphic"/>
+            </feMerge>
+        </filter>
+    </defs>
+    
+    <!-- Central Connection Point -->
+    <circle cx="30" cy="30" r="4" fill="#fff" filter="url(#glow-multi)">
+        <animate attributeName="opacity" values="0.5;1;0.5" dur="3s" repeatCount="indefinite"/>
+    </circle>
+    
+    <!-- Orbital Rings (Represenging different traditions) -->
+    <g fill="none" stroke-width="2" stroke-opacity="0.8">
+        <!-- Ring 1 (Western) - Cyan -->
+        <ellipse cx="30" cy="30" rx="22" ry="8" stroke="#22d3ee" transform="rotate(0 30 30)">
+             <animateTransform attributeName="transform" type="rotate" from="0 30 30" to="360 30 30" dur="20s" repeatCount="indefinite" ease="linear"/>
+        </ellipse>
+        
+        <!-- Ring 2 (Vedic) - Magenta -->
+        <ellipse cx="30" cy="30" rx="22" ry="8" stroke="#d946ef" transform="rotate(60 30 30)">
+             <animateTransform attributeName="transform" type="rotate" from="60 30 30" to="420 30 30" dur="20s" repeatCount="indefinite" ease="linear"/>
+        </ellipse>
+        
+        <!-- Ring 3 (Chinese) - Purple/White -->
+        <ellipse cx="30" cy="30" rx="22" ry="8" stroke="#e0e7ff" transform="rotate(120 30 30)">
+             <animateTransform attributeName="transform" type="rotate" from="120 30 30" to="480 30 30" dur="20s" repeatCount="indefinite" ease="linear"/>
+        </ellipse>
+    </g>
+</svg>

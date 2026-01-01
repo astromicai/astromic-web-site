@@ -1,0 +1,135 @@
+<svg width="600" height="600" viewBox="0 0 600 600" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <defs>
+        <radialGradient id="core-v6" cx="50%" cy="50%" r="50%" fx="50%" fy="50%">
+            <stop offset="0%" stop-color="#fff0f5" />
+            <stop offset="30%" stop-color="#c874b2" />
+            <stop offset="80%" stop-color="#7b337d" stop-opacity="0.9"/>
+            <stop offset="100%" stop-color="#210535" stop-opacity="0"/>
+        </radialGradient>
+        
+        <linearGradient id="ring-metal-v6" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stop-color="#f5d5e0" stop-opacity="1"/>
+            <stop offset="50%" stop-color="#c874b2" stop-opacity="1"/>
+            <stop offset="100%" stop-color="#430d4b" stop-opacity="1"/>
+        </linearGradient>
+
+        <filter id="crisp-v6" x="-20%" y="-20%" width="140%" height="140%">
+            <!-- Minimized blur for maximum clarity -->
+            <feGaussianBlur stdDeviation="0.5" result="blur"/>
+            <feComposite in="SourceGraphic" in2="blur" operator="over"/>
+        </filter>
+        
+        <style>
+            .zodiac-symbol { font-family: 'Arial Unicode MS', 'Segoe UI Symbol', sans-serif; font-size: 24px; fill: #f5d5e0; text-anchor: middle; dominant-baseline: middle; }
+            /* System symbol fitted for 50px wide ring */
+            .system-symbol { font-family: 'Arial Unicode MS', 'Segoe UI Symbol', sans-serif; font-size: 30px; fill: #f5d5e0; text-anchor: middle; dominant-baseline: middle; font-weight: bold; }
+        </style>
+    </defs>
+
+    <g transform="translate(300, 300)">
+        
+        <!-- CENTER: Radiant Singularity Core -->
+        <circle r="50" fill="url(#core-v6)">
+             <animate attributeName="r" values="48;52;48" dur="4s" repeatCount="indefinite" ease="ease-in-out"/>
+        </circle>
+        
+        <!-- AI Text Removed -->
+        
+        <g stroke="#f5d5e0" stroke-width="1.5" opacity="0.8">
+             <circle cx="0" cy="0" r="70" stroke-dasharray="2 4" fill="none" opacity="0.5">
+                <animateTransform attributeName="transform" type="rotate" from="360" to="0" dur="40s" repeatCount="indefinite" ease="linear"/>
+             </circle>
+        </g>
+
+        <!-- RING 1: Sacred Geometry (Scale reduced slightly to fit new structure) -->
+        <g opacity="0.9">
+            <animateTransform attributeName="transform" type="rotate" from="360" to="0" dur="60s" repeatCount="indefinite" ease="linear"/>
+            <path d="M0 -100 L86.6 50 H-86.6 Z" stroke="#c874b2" stroke-width="1.5" fill="none"/>
+            <path d="M0 100 L-86.6 -50 H86.6 Z" stroke="#c874b2" stroke-width="1.5" fill="none"/>
+        </g>
+
+        <!-- RING 2: Zodiac Wheel (12 Signs) -->
+        <!-- Radius 120-170 approx -->
+        <g>
+            <animateTransform attributeName="transform" type="rotate" from="0" to="360" dur="150s" repeatCount="indefinite" ease="linear"/>
+            <circle r="160" stroke="#7b337d" stroke-width="1" fill="none"/>
+            <circle r="130" stroke="#7b337d" stroke-width="1" fill="none"/>
+            
+            <!-- Positioning at r=145 -->
+            <g transform="rotate(0) translate(0, -145)"> <text class="zodiac-symbol" transform="rotate(0)">♈</text> </g>
+            <g transform="rotate(30) translate(0, -145)"> <text class="zodiac-symbol" transform="rotate(-30)">♉</text> </g>
+            <g transform="rotate(60) translate(0, -145)"> <text class="zodiac-symbol" transform="rotate(-60)">♊</text> </g>
+            <g transform="rotate(90) translate(0, -145)"> <text class="zodiac-symbol" transform="rotate(-90)">♋</text> </g>
+            <g transform="rotate(120) translate(0, -145)"> <text class="zodiac-symbol" transform="rotate(-120)">♌</text> </g>
+            <g transform="rotate(150) translate(0, -145)"> <text class="zodiac-symbol" transform="rotate(-150)">♍</text> </g>
+            <g transform="rotate(180) translate(0, -145)"> <text class="zodiac-symbol" transform="rotate(-180)">♎</text> </g>
+            <g transform="rotate(210) translate(0, -145)"> <text class="zodiac-symbol" transform="rotate(-210)">♏</text> </g>
+            <g transform="rotate(240) translate(0, -145)"> <text class="zodiac-symbol" transform="rotate(-240)">♐</text> </g>
+            <g transform="rotate(270) translate(0, -145)"> <text class="zodiac-symbol" transform="rotate(-270)">♑</text> </g>
+            <g transform="rotate(300) translate(0, -145)"> <text class="zodiac-symbol" transform="rotate(-300)">♒</text> </g>
+            <g transform="rotate(330) translate(0, -145)"> <text class="zodiac-symbol" transform="rotate(-330)">♓</text> </g>
+        </g>
+
+        <!-- RING 3: The Global Systems Outer Ring (7 Systems) - WIDENED -->
+        <!-- Inner radius 200, Outer radius 260. Width 60px. Center ~230 -->
+        <g>
+            <animateTransform attributeName="transform" type="rotate" from="0" to="-360" dur="100s" repeatCount="indefinite" ease="linear"/>
+            
+            <!-- Ring Boundaries -->
+            <circle r="260" stroke="url(#ring-metal-v6)" stroke-width="2" fill="none"/>
+            <circle r="200" stroke="url(#ring-metal-v6)" stroke-width="1" fill="none"/>
+
+            <!-- Background track opacity -->
+            <path d="M0 0" fill="none"/> <!-- Placeholder -->
+
+            <!-- 7 Astrology Systems at r=230 -->
+            
+            <!-- 1. Western (Jupiter) -->
+            <g transform="rotate(0) translate(0, -230)"> 
+                <text class="system-symbol" transform="rotate(0)" filter="url(#crisp-v6)">♃</text> 
+            </g>
+            
+            <!-- 2. Vedic (Om) -->
+            <g transform="rotate(51.4) translate(0, -230)"> 
+                <text class="system-symbol" transform="rotate(-51.4)" filter="url(#crisp-v6)">ॐ</text> 
+            </g>
+            
+            <!-- 3. Chinese (Yin Yang) -->
+            <g transform="rotate(102.8) translate(0, -230)"> 
+                <text class="system-symbol" transform="rotate(-102.8)" filter="url(#crisp-v6)">☯</text> 
+            </g>
+            
+            <!-- 4. Tibetan (Dharma Wheel) -->
+            <g transform="rotate(154.2) translate(0, -230)"> 
+                <text class="system-symbol" transform="rotate(-154.2)" filter="url(#crisp-v6)">☸</text> 
+            </g>
+            
+            <!-- 5. Hellenistic (Earth/Cross) -->
+            <g transform="rotate(205.6) translate(0, -230)"> 
+                <text class="system-symbol" transform="rotate(-205.6)" filter="url(#crisp-v6)">⊕</text> 
+            </g>
+            
+            <!-- 6. Islamic (Star & Crescent) -->
+            <g transform="rotate(257) translate(0, -230)"> 
+                <text class="system-symbol" transform="rotate(-257)" filter="url(#crisp-v6)">☪</text> 
+            </g>
+            
+            <!-- 7. Kabbalistic (Star of David) -->
+            <g transform="rotate(308.4) translate(0, -230)"> 
+                <text class="system-symbol" transform="rotate(-308.4)" filter="url(#crisp-v6)">✡</text> 
+            </g>
+            
+             <!-- Separators -->
+            <g stroke="#c874b2" stroke-width="1" opacity="0.5">
+                <line x1="0" y1="-200" x2="0" y2="-260" transform="rotate(25.7)"/>
+                <line x1="0" y1="-200" x2="0" y2="-260" transform="rotate(77.1)"/>
+                <line x1="0" y1="-200" x2="0" y2="-260" transform="rotate(128.5)"/>
+                <line x1="0" y1="-200" x2="0" y2="-260" transform="rotate(179.9)"/>
+                <line x1="0" y1="-200" x2="0" y2="-260" transform="rotate(231.3)"/>
+                <line x1="0" y1="-200" x2="0" y2="-260" transform="rotate(282.7)"/>
+                <line x1="0" y1="-200" x2="0" y2="-260" transform="rotate(334.1)"/>
+            </g>
+
+        </g>
+    </g>
+</svg>

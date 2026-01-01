@@ -1,0 +1,32 @@
+<svg width="60" height="60" viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <defs>
+        <radialGradient id="globe-core" cx="50%" cy="50%" r="50%" fx="50%" fy="50%">
+            <stop offset="0%" stop-color="#fff0f5" />
+            <stop offset="40%" stop-color="#22d3ee" stop-opacity="0.6"/>
+            <stop offset="100%" stop-color="#1e1b4b" stop-opacity="0"/>
+        </radialGradient>
+    </defs>
+    
+    <!-- Central Glow -->
+    <circle cx="30" cy="30" r="20" fill="url(#globe-core)">
+         <animate attributeName="r" values="19;21;19" dur="4s" repeatCount="indefinite"/>
+    </circle>
+    
+    <!-- Rotating Globe Wireframe -->
+    <g stroke="#22d3ee" stroke-width="0.8" fill="none" stroke-opacity="0.8">
+        <animateTransform attributeName="transform" type="rotate" from="0 30 30" to="360 30 30" dur="20s" repeatCount="indefinite" ease="linear"/>
+        
+        <!-- Outer Circle -->
+        <circle cx="30" cy="30" r="24" stroke-dasharray="2 2" stroke="#d946ef"/>
+        
+        <!-- Meridians -->
+        <ellipse cx="30" cy="30" rx="24" ry="8"/>
+        <ellipse cx="30" cy="30" rx="24" ry="16" transform="rotate(60 30 30)"/>
+        <ellipse cx="30" cy="30" rx="24" ry="16" transform="rotate(-60 30 30)"/>
+    </g>
+
+    <!-- AI Text (Stationary & Pulsing) -->
+    <text x="30" y="32" font-family="'Inter', sans-serif" font-weight="900" font-size="15" fill="#fff" text-anchor="middle" dominant-baseline="middle" style="text-shadow: 0 0 5px #fff, 0 0 10px #22d3ee, 0 0 20px #d946ef;">AI
+        <animate attributeName="opacity" values="1;0.6;1" dur="2s" repeatCount="indefinite"/>
+    </text>
+</svg>

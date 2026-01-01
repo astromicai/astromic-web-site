@@ -1,0 +1,88 @@
+<svg class="globe-svg" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+    <defs>
+        <filter id="globe-glow" x="-50%" y="-50%" width="200%" height="200%">
+            <feGaussianBlur stdDeviation="4" result="coloredBlur" />
+            <feMerge>
+                <feMergeNode in="coloredBlur" />
+                <feMergeNode in="SourceGraphic" />
+            </feMerge>
+        </filter>
+        <linearGradient id="globe-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" style="stop-color:#22d3ee;stop-opacity:1" />
+            <stop offset="100%" style="stop-color:#9D00FF;stop-opacity:1" />
+        </linearGradient>
+        <style>
+            .globe-rotate {
+                transform-origin: center;
+                animation: globe-spin 30s linear infinite;
+            }
+            .symbol-ring {
+                transform-origin: center;
+                animation: ring-spin 40s linear infinite reverse;
+            }
+            .region-dot {
+                animation: pulse-dot 2s infinite;
+            }
+            @keyframes globe-spin {
+                from { transform: rotate(0deg); }
+                to { transform: rotate(360deg); }
+            }
+            @keyframes ring-spin {
+                from { transform: rotate(0deg); }
+                to { transform: rotate(360deg); }
+            }
+            @keyframes pulse-dot {
+                0%, 100% { r: 3; opacity: 0.8; }
+                50% { r: 5; opacity: 1; }
+            }
+            .astro-symbol {
+                font-family: "Segoe UI Emoji", "Noto Color Emoji", sans-serif;
+                font-size: 14px;
+                fill: #d946ef;
+                text-anchor: middle;
+                dominant-baseline: middle;
+                filter: drop-shadow(0 0 5px #d946ef);
+            }
+        </style>
+    </defs>
+    <!-- Globe Outline -->
+    <circle cx="100" cy="100" r="70" fill="none" stroke="url(#globe-grad)" stroke-width="1.5"
+        stroke-opacity="0.5" />
+
+    <!-- Rotating Meridians -->
+    <g class="globe-rotate">
+        <ellipse cx="100" cy="100" rx="70" ry="20" fill="none" stroke="#d946ef"
+            stroke-width="0.5" stroke-opacity="0.3" />
+        <ellipse cx="100" cy="100" rx="70" ry="40" fill="none" stroke="#d946ef"
+            stroke-width="0.5" stroke-opacity="0.3" transform="rotate(45 100 100)" />
+        <ellipse cx="100" cy="100" rx="70" ry="40" fill="none" stroke="#d946ef"
+            stroke-width="0.5" stroke-opacity="0.3" transform="rotate(-45 100 100)" />
+        <ellipse cx="100" cy="100" rx="60" ry="70" fill="none" stroke="#22d3ee"
+            stroke-width="0.5" stroke-opacity="0.3" />
+    </g>
+
+    <!-- Region Highlights (Pulsing Dots) -->
+    <circle cx="130" cy="90" r="3" fill="#fff" class="region-dot" /> <!-- Asia -->
+    <circle cx="110" cy="95" r="3" fill="#fff" class="region-dot" style="animation-delay: 0.5s;" /> <!-- MENA -->
+    <circle cx="90" cy="85" r="3" fill="#fff" class="region-dot" style="animation-delay: 1.0s;" /> <!-- EU -->
+
+    <!-- Orbiting Symbols Ring -->
+    <g class="symbol-ring">
+        <!-- Circular path for symbols (implicit placement) -->
+        <circle cx="100" cy="100" r="90" fill="none" stroke="#ffffff" stroke-opacity="0.1" stroke-dasharray="2 4"/>
+        
+        <!-- Symbols positioned in circle (r=90) at 60 degree intervals -->
+        <!-- 0 deg (Right) -->
+        <text x="190" y="100" class="astro-symbol" transform="rotate(90 190 100)">♈</text>
+        <!-- 60 deg -->
+        <text x="145" y="177.9" class="astro-symbol" transform="rotate(150 145 177.9)">🕉️</text>
+        <!-- 120 deg -->
+        <text x="55" y="177.9" class="astro-symbol" transform="rotate(210 55 177.9)">☯</text>
+        <!-- 180 deg (Left) -->
+        <text x="10" y="100" class="astro-symbol" transform="rotate(270 10 100)">☪</text>
+        <!-- 240 deg -->
+        <text x="55" y="22.1" class="astro-symbol" transform="rotate(330 55 22.1)">✡</text>
+        <!-- 300 deg -->
+        <text x="145" y="22.1" class="astro-symbol" transform="rotate(30 145 22.1)">☸</text>
+    </g>
+</svg>

@@ -1,0 +1,91 @@
+<svg width="500" height="300" viewBox="0 0 500 300" xmlns="http://www.w3.org/2000/svg">
+    <defs>
+        <linearGradient id="chartGradient" x1="0" y1="1" x2="0" y2="0">
+            <stop offset="0%" stop-color="rgba(157, 0, 255, 0.1)" />
+            <stop offset="100%" stop-color="rgba(34, 211, 238, 0.3)" />
+        </linearGradient>
+        <linearGradient id="lineGradient" x1="0" y1="0" x2="1" y2="0">
+             <stop offset="0%" stop-color="#9d00ff" />
+             <stop offset="100%" stop-color="#22d3ee" />
+        </linearGradient>
+        <filter id="glowChart">
+            <feGaussianBlur stdDeviation="3" result="coloredBlur"/>
+            <feMerge>
+                <feMergeNode in="coloredBlur"/>
+                <feMergeNode in="SourceGraphic"/>
+            </feMerge>
+        </filter>
+        
+        <!-- Animation Style -->
+        <style>
+            .growth-line {
+                stroke-dasharray: 600;
+                stroke-dashoffset: 600;
+                animation: drawLine 3s ease-out forwards;
+            }
+            .data-point {
+                opacity: 0;
+                animation: fadeInPoint 0.5s ease-out forwards;
+            }
+            @keyframes drawLine {
+                to { stroke-dashoffset: 0; }
+            }
+            @keyframes fadeInPoint {
+                to { opacity: 1; }
+            }
+        </style>
+    </defs>
+
+    <!-- Background Grid -->
+    <line x1="50" y1="250" x2="450" y2="250" stroke="rgba(255,255,255,0.1)" stroke-width="1" />
+    <line x1="50" y1="150" x2="450" y2="150" stroke="rgba(255,255,255,0.05)" stroke-width="1" stroke-dasharray="4,4" />
+    <line x1="50" y1="50" x2="450" y2="50" stroke="rgba(255,255,255,0.05)" stroke-width="1" stroke-dasharray="4,4" />
+
+    <!-- Axes Labels -->
+    <text x="30" y="255" fill="rgba(255,255,255,0.5)" font-size="12" text-anchor="end">0</text>
+    <text x="30" y="155" fill="rgba(255,255,255,0.5)" font-size="12" text-anchor="end">$15B</text>
+    <text x="30" y="55" fill="rgba(255,255,255,0.5)" font-size="12" text-anchor="end">$30B</text>
+
+    <!-- Year Labels (Bold for clarity) -->
+    <text x="50" y="275" fill="rgba(255,255,255,0.7)" font-size="14" font-weight="bold" text-anchor="middle">2021</text>
+    <text x="450" y="275" fill="rgba(255,255,255,0.7)" font-size="14" font-weight="bold" text-anchor="middle">2031</text>
+
+    <!-- Growth Area (Fade in) -->
+    <path d="M50,250 L50,180 Q200,160 300,120 T450,80 L450,250 Z" fill="url(#chartGradient)">
+        <animate attributeName="opacity" values="0;1" dur="2s" />
+    </path>
+
+    <!-- Growth Line (Animated) -->
+    <path class="growth-line" d="M50,180 Q200,160 300,120 T450,80" fill="none" stroke="url(#lineGradient)" stroke-width="4" stroke-linecap="round" filter="url(#glowChart)" />
+
+    <!-- Moving Bubble Animation along the path -->
+    <!-- The path here matches the curve segment: M50,180 Q200,160 300,120 T450,80 -->
+    <!-- We offset it to start relative to 0,0 by using M0,0 and relative path commands or just mapping to the absolute path -->
+    
+    <g>
+         <circle r="7" fill="#fff" stroke="#22d3ee" stroke-width="2">
+             <!-- Animate along the path continuously and slowly (6s) -->
+             <animateMotion dur="6s" repeatCount="indefinite" path="M50,180 Q200,160 300,120 T450,80" />
+         </circle>
+    </g>
+
+    <!-- Data Points (Static Markers at ends) -->
+    <!-- 2021 -->
+    <g class="data-point" style="animation-delay: 0s;">
+        <circle cx="50" cy="180" r="6" fill="#121225" stroke="#9d00ff" stroke-width="2" />
+        <circle cx="50" cy="180" r="3" fill="#fff" />
+        <!-- Marker Box 2021 -->
+        <rect x="60" y="160" width="70" height="30" rx="6" fill="rgba(18, 18, 37, 0.8)" stroke="rgba(157, 0, 255, 0.5)" />
+        <text x="95" y="180" fill="#fff" font-size="12" font-weight="bold" text-anchor="middle">$12.8B</text>
+    </g>
+
+    <!-- 2031 -->
+    <g class="data-point" style="animation-delay: 2.5s;">
+        <circle cx="450" cy="80" r="6" fill="#121225" stroke="#22d3ee" stroke-width="2" />
+        <circle cx="450" cy="80" r="3" fill="#fff" />
+        <!-- Marker Box 2031 -->
+        <rect x="370" y="40" width="70" height="30" rx="6" fill="rgba(18, 18, 37, 0.8)" stroke="rgba(34, 211, 238, 0.5)" />
+        <text x="405" y="60" fill="#fff" font-size="12" font-weight="bold" text-anchor="middle">$22.8B</text>
+    </g>
+
+</svg>

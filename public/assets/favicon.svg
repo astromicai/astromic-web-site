@@ -1,0 +1,27 @@
+<svg width="64" height="64" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <defs>
+        <radialGradient id="star-core" cx="50%" cy="50%" r="50%" fx="50%" fy="50%">
+            <stop offset="0%" stop-color="#f5d5e0" stop-opacity="1"/>
+            <stop offset="40%" stop-color="#c874b2" stop-opacity="0.8"/>
+            <stop offset="100%" stop-color="#7b337d" stop-opacity="0"/>
+        </radialGradient>
+    </defs>
+    
+    <!-- Dark Background for Visibility -->
+    <circle cx="32" cy="32" r="32" fill="#0f0f1a"/>
+
+    <!-- Central Glowing Orb -->
+    <circle cx="32" cy="32" r="20" fill="url(#star-core)" />
+    
+    <!-- Dotted Ring -->
+    <circle cx="32" cy="32" r="26" stroke="#c874b2" stroke-width="0.5" stroke-dasharray="1 2" opacity="0.6"/>
+
+    <!-- Six-Pointed Star (Hexagram) -->
+    <g stroke="#f5d5e0" stroke-width="1.5" fill="none">
+        <animateTransform attributeName="transform" type="rotate" from="0 32 32" to="360 32 32" dur="20s" repeatCount="indefinite" ease="linear"/>
+        <!-- Triangle Pointing Up -->
+        <polygon points="32,6 56.24,48 7.76,48"/>
+        <!-- Triangle Pointing Down -->
+        <polygon points="32,58 7.76,16 56.24,16"/>
+    </g>
+</svg>

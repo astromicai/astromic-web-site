@@ -1,0 +1,732 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Astromic.ai - #1 AI Astrology Investment & Prediction Engine</title>
+    <meta name="description"
+        content="Discover Astromic, the world's first AI-native astrology engine. Uniting Western, Vedic & Chinese traditions with deep learning. The top choice for investors seeking the next AI unicorn in the $12B spiritual tech market.">
+    <meta name="keywords"
+        content="AI Investment Only, Best AI Startup 2026, AI Astrology, Artificial Intelligence Horoscope, Invest in AI, Global Wellness Tech, Astromic, Predictive AI, Generative AI for Spirituality, Next Unicorn, Tech Astrology, Best Astrology App 2026">
+    <link rel="canonical" href="https://www.astromic.ai/">
+    <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+    <meta name="robots" content="index, follow">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.astromic.ai/">
+    <meta property="og:title" content="Astromic - The Future of AI investment in Wellness Tech">
+    <meta property="og:description"
+        content="The #1 AI-Native Astrology Platform. Fusing ancient wisdom with predictive Neural-Symbolic AI. A prime investment opportunity in the global wellness economy.">
+    <meta property="og:image" content="https://www.astromic.ai/assets/social_preview_v2.png">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://www.astromic.ai/">
+    <meta property="twitter:title" content="Invest in Astromic - The Next AI Super App">
+    <meta property="twitter:description"
+        content="Global AI astrology platform targeting 1B+ users. Western, Vedic, Chinese & more. Leading the AI spiritual revolution.">
+    <meta property="twitter:image" content="https://www.astromic.ai/assets/social_preview_v2.png">
+
+    <!-- JSON-LD Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "SoftwareApplication",
+      "name": "Astromic AI",
+      "applicationCategory": "LifestyleApplication",
+      "operatingSystem": "Web, iOS, Android",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD"
+      },
+      "description": "Astromic is a unified AI astrology engine that synthesizes Western, Arabic, Vedic, Chinese, and other astrological systems to provide hyper-accurate, personalized guidance.",
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "4.8",
+        "ratingCount": "1250"
+      }
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "Astromic",
+      "url": "https://www.astromic.ai",
+      "logo": "https://www.astromic.ai/assets/logo_globe_ai.svg",
+      "sameAs": [
+        "https://twitter.com/astromic_ai",
+        "https://linkedin.com/company/astromic-ai"
+      ]
+    }
+    </script>
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;500;700;800&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="styles.css?v=14">
+</head>
+
+<body>
+    <div class="stars-bg"></div>
+    <canvas id="bg-canvas"></canvas>
+
+    <!-- Coming Soon Overlay (Auto-Hides on Jan 1) -->
+    <div id="launch-overlay">
+        <!-- Background Stars -->
+        <div class="stars-bg"></div>
+
+        <div class="launch-content fade-in-up">
+            <h1 class="launch-title">Astromic.AI</h1>
+            <p class="launch-subtitle" style="margin-bottom: 1rem;">Get ready for AI-powered global astrology like never
+                before.</p>
+            <p style="font-size: 1rem; color: #d946ef; margin-bottom: 2rem; letter-spacing: 1px; font-weight: 500;">
+                Personalized insights • Multi-tradition wisdom • Cosmic magic</p>
+
+            <p style="font-size: 0.95rem; opacity: 0.8; margin-bottom: 2.5rem; line-height: 1.6;">Stay tuned — we're
+                aligning the stars for something extraordinary.<br>Global launch sequence initiated...</p>
+
+            <div class="countdown-container">
+                <div class="countdown-item">
+                    <span id="days" class="countdown-val">00</span>
+                    <span class="countdown-label">Days</span>
+                </div>
+                <div class="countdown-item">
+                    <span id="hours" class="countdown-val">00</span>
+                    <span class="countdown-label">Hours</span>
+                </div>
+                <div class="countdown-item">
+                    <span id="minutes" class="countdown-val">00</span>
+                    <span class="countdown-label">Mins</span>
+                </div>
+                <div class="countdown-item">
+                    <span id="seconds" class="countdown-val">00</span>
+                    <span class="countdown-label">Secs</span>
+                </div>
+            </div>
+
+            <p style="margin-bottom: 1rem; color: #fff;">Get early access & updates:</p>
+
+            <!-- Reusing the secure form handler logic -->
+            <form class="contact-form" method="POST" id="launch-form">
+                <input type="hidden" name="ip" class="field-ip">
+                <input type="hidden" name="city" class="field-city">
+                <input type="hidden" name="country" class="field-country">
+                <input type="hidden" name="platform" class="field-platform">
+                <!-- Honeypot -->
+                <input type="text" name="honey_pot" style="display:none !important;" tabindex="-1" autocomplete="off">
+
+                <div style="display: flex; gap: 10px;">
+                    <input type="email" name="email" required placeholder="Enter your email"
+                        style="flex: 1; margin-bottom: 0;">
+                    <button type="submit" class="btn btn-primary btn-glow"
+                        style="width: auto; whitespace: nowrap;">Notify Me</button>
+                </div>
+                <div id="launch-form-status" style="margin-top: 10px; font-size: 0.9rem;"></div>
+            </form>
+        </div>
+
+        <!-- Powered By Footer -->
+        <a href="https://aiworkx.com" target="_blank" rel="noopener noreferrer" class="powered-by-link">
+            Powered by <span class="glow-text">AIworkX</span>
+        </a>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container nav-container">
+            <a href="#home" class="logo">Astromic.AI</a>
+
+            <button class="mobile-menu-btn" aria-label="Toggle menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+
+            <div class="nav-links">
+                <a href="#home">Home</a>
+                <a href="#about">About</a>
+                <a href="#global">Global Users</a>
+                <a href="#features">Features</a>
+                <a href="#investors">Investors</a>
+                <a href="#contact">Contact</a>
+                <a href="https://app.astromic.ai/" class="btn btn-primary nav-cta">Start Now</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="container hero-container">
+            <div class="hero-content fade-in-up">
+                <h1>Astromic: AI-native astrology for a global generation.</h1>
+                <p class="hero-sub">Blend Western, Arabic, Vedic, Chinese, and more traditions with cutting-edge AI.<br>
+                    Ask in your
+                    language, get personalized guidance, sigils, and cosmic visions tailored to your life.</p>
+                <div class="hero-btns">
+                    <a href="https://app.astromic.ai/" class="btn btn-primary btn-glow">Start
+                        now</a>
+                    <a href="#about" class="btn btn-secondary">How it works</a>
+                </div>
+            </div>
+            <div class="hero-visual-container fade-in-up delay-200">
+                <img src="assets/hero_digital_astrolabe_v6.svg" alt="Digital Astrolabe">
+            </div>
+        </div>
+    </section>
+
+    <!-- About / How it works -->
+    <section id="about" class="about">
+        <div class="container">
+            <div class="section-header fade-in">
+                <h2>How Astromic guides you.</h2>
+            </div>
+
+            <div class="steps-grid">
+                <!-- Step 1 -->
+                <div class="step-card glass-card fade-in delay-100">
+                    <div class="step-visual">
+                        <!-- Placeholder: birth wheel -->
+                        <div class="ai-icon-placeholder">🔮</div>
+                    </div>
+                    <h3>Share your cosmic blueprint</h3>
+                    <p>Enter your date, time, place, and preferred system (Western, Vedic, Chinese, etc.) for a
+                        personalized natal chart.</p>
+                </div>
+
+                <!-- Step 2 -->
+                <div class="step-card glass-card fade-in delay-200">
+                    <div class="step-visual">
+                        <!-- Placeholder: multilingual globe -->
+                        <div class="ai-icon-placeholder">🌍</div>
+                    </div>
+                    <h3>Ask in your own language</h3>
+                    <p>Support for English, Spanish, Arabic, Indian languages, Chinese, French, German, and all global
+                        languages AI understands and responds culturally.</p>
+                </div>
+
+                <!-- Step 3 -->
+                <div class="step-card glass-card fade-in delay-300">
+                    <div class="step-visual">
+                        <!-- Placeholder: calendar -->
+                        <div class="ai-icon-placeholder">📅</div>
+                    </div>
+                    <h3>Receive accurate, daily guidance</h3>
+                    <p>Daily, weekly, and monthly readings combining astrological logic with AI explanations, grounded
+                        in real-time transits.</p>
+                </div>
+            </div>
+
+            <div class="metrics-strip glass-panel fade-in delay-400">
+                <div class="metric-item">
+                    <span class="metric-icon">✨</span>
+                    <span>Built to serve millions of global seekers</span>
+                </div>
+                <div class="metric-item">
+                    <img src="assets/icon_multi_tradition.svg" alt="Multi-tradition" class="metric-icon"
+                        style="width: 32px; height: 32px;">
+                    <span>Multi-tradition engine</span>
+                </div>
+                <div class="metric-item">
+                    <span class="metric-icon">🎯</span>
+                    <span>Designed for high-accuracy predictions</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Supported Systems -->
+    <section id="systems" class="systems section-padding">
+        <div class="container">
+            <div class="section-header fade-in">
+                <h2>Unified AI Astrology Engine.</h2>
+                <p class="section-sub">Astromic's <strong>Neural-Symbolic Engine</strong> fuses
+                    <strong>multi-dimensional planetary datasets</strong> with <strong>predictive LLMs</strong>,
+                    synthesizing cross-cultural wisdom for <strong>hyper-accurate, holistic inference</strong>.
+                </p>
+            </div>
+
+            <div class="systems-grid fade-in delay-200">
+                <div class="system-card glass-card">
+                    <div class="system-icon">
+                        <img src="assets/icon_western.svg" alt="Western Astrology">
+                    </div>
+                    <h3>Western</h3>
+                    <p>Tropical zodiac, psychological archetypes, and modern transits.</p>
+                </div>
+                <div class="system-card glass-card">
+                    <div class="system-icon">
+                        <img src="assets/icon_vedic.svg" alt="Vedic Astrology">
+                    </div>
+                    <h3>Indian Vedic</h3>
+                    <p>Sidereal precision, Dashas, and Nakshatras for karmic timing.</p>
+                </div>
+                <div class="system-card glass-card">
+                    <div class="system-icon">
+                        <img src="assets/icon_chinese.svg" alt="Chinese Astrology">
+                    </div>
+                    <h3>Chinese</h3>
+                    <p>BaZi, annual pillars, and elemental cycles for life balance.</p>
+                </div>
+                <div class="system-card glass-card">
+                    <div class="system-icon">
+                        <img src="assets/icon_tibetan.svg" alt="Tibetan Astrology">
+                    </div>
+                    <h3>Tibetan</h3>
+                    <p>Elemental astrology blending Chinese calculations with Indian philosophy.</p>
+                </div>
+                <div class="system-card glass-card">
+                    <div class="system-icon">
+                        <img src="assets/icon_hellenistic.svg" alt="Hellenistic Astrology">
+                    </div>
+                    <h3>Hellenistic</h3>
+                    <p>Traditional techniques, lots, and time lords for fated events.</p>
+                </div>
+                <div class="system-card glass-card">
+                    <div class="system-icon">
+                        <img src="assets/icon_islamic.svg" alt="Islamic Astrology">
+                    </div>
+                    <h3>Islamic</h3>
+                    <p>Lunar mansions and medieval Arabic parts for precise elections.</p>
+                </div>
+                <div class="system-card glass-card">
+                    <div class="system-icon">
+                        <img src="assets/icon_kabbalistic.svg" alt="Kabbalistic Astrology">
+                    </div>
+                    <h3>Kabbalistic</h3>
+                    <p>Tree of Life mapping and planetary correspondences for spiritual growth.</p>
+                </div>
+            </div>
+        </div>
+        <!-- CTA for Unified AI Section -->
+        <div style="text-align: center; margin-top: 3rem;">
+            <a href="https://app.astromic.ai/" class="btn btn-primary btn-glow">Try Now</a>
+        </div>
+        </div>
+    </section>
+
+    <!-- Global Users -->
+    <section id="global" class="global">
+        <div class="container">
+            <div class="global-header-layout fade-in">
+                <div class="section-header" style="max-width: 800px; margin: 0 auto 2rem;">
+                    <h2>Global by design.</h2>
+                    <p class="section-sub">Optimized for the Arabic World, India, China, US, EU, Brazil. Astromic serves
+                        the
+                        world with
+                        culturally tuned AI.</p>
+                </div>
+                <div class="global-visual-container">
+                    <img src="assets/global_globe.svg" alt="Global Network">
+                </div>
+            </div>
+
+
+            <div class="regions-grid">
+                <!-- Row 1 -->
+                <div class="region-card glass-card fade-in">
+                    <h4>Middle East & MENA</h4>
+                    <p>Islamic astrology roots, lunar calendars, and high-growth Arabic markets.</p>
+                </div>
+                <div class="region-card glass-card fade-in delay-100">
+                    <h4>Japan & East Asia</h4>
+                    <p>High-net-worth markets with deep interest in fortune-telling and premium digital spirituality.
+                    </p>
+                </div>
+                <div class="region-card glass-card fade-in delay-200">
+                    <h4>India</h4>
+                    <p>Vedic astrology, Kundli matching, electional dates in multiple Indian languages.</p>
+                </div>
+                <div class="region-card glass-card fade-in delay-300">
+                    <h4>China</h4>
+                    <p>Chinese zodiac, five elements, annual cycles with AI insights.</p>
+                </div>
+
+                <!-- Row 2 -->
+                <div class="region-card glass-card fade-in delay-400">
+                    <h4>Southeast Asia</h4>
+                    <p>Tech-savvy youth in Singapore & Thailand driving a digital spiritual renaissance.</p>
+                </div>
+                <div class="region-card glass-card fade-in delay-500">
+                    <h4>US & EU</h4>
+                    <p>Western zodiac, daily horoscopes, psychological astrology for the modern West.</p>
+                </div>
+                <div class="region-card glass-card fade-in delay-600">
+                    <h4>Brazil & LatAm</h4>
+                    <p>Blending local spiritual traditions with global astrology for holistic guidance.</p>
+                </div>
+                <div class="region-card glass-card fade-in delay-700">
+                    <p>Rapidly digitizing youth reconnecting with ancestral cosmic traditions.</p>
+                </div>
+            </div>
+            <!-- CTA for Global Section -->
+            <div style="text-align: center; margin-top: 3rem;">
+                <a href="https://app.astromic.ai/" class="btn btn-primary btn-glow">Try Now</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why seekers choose Astromic -->
+    <section id="features" class="features">
+        <div class="container">
+            <div class="section-header fade-in">
+                <h2>Why seekers choose Astromic.</h2>
+            </div>
+            <!-- Removed visual container as per screenshot -->
+
+            <div class="features-grid">
+                <!-- 1 -->
+                <div class="feature-card glass-card fade-in">
+                    <div class="feature-icon">
+                        <div class="ai-icon-placeholder" style="width: 60px; height: 60px; font-size: 2rem;">⚡</div>
+                    </div>
+                    <h4>Instant start</h4>
+                    <p>Try guidance without heavy signup.</p>
+                </div>
+                <!-- 2 -->
+                <div class="feature-card glass-card fade-in delay-100">
+                    <div class="feature-icon">
+                        <div class="ai-icon-placeholder" style="width: 60px; height: 60px; font-size: 2rem;">🌌</div>
+                    </div>
+                    <h4>Multi-system astrology</h4>
+                    <p>Western, Vedic, Chinese, Tibetan, Hellenistic, Islamic, Kabbalistic.</p>
+                </div>
+                <!-- 3 -->
+                <div class="feature-card glass-card fade-in delay-200">
+                    <div class="feature-icon">
+                        <div class="ai-icon-placeholder" style="width: 60px; height: 60px; font-size: 2rem;">🧠</div>
+                    </div>
+                    <h4>Deep, contextual insights</h4>
+                    <p>AI explanations anchored in real astrological logic.</p>
+                </div>
+                <!-- 4 -->
+                <div class="feature-card glass-card fade-in delay-300">
+                    <div class="feature-icon">
+                        <div class="ai-icon-placeholder" style="width: 60px; height: 60px; font-size: 2rem;">🎙️</div>
+                    </div>
+                    <h4>Voice-ready</h4>
+                    <p>Designed for voice and chat experiences.</p>
+                </div>
+                <!-- 5 -->
+                <div class="feature-card glass-card fade-in delay-400">
+                    <div class="feature-icon">
+                        <div class="ai-icon-placeholder" style="width: 60px; height: 60px; font-size: 2rem;">🌐</div>
+                    </div>
+                    <h4>Global by design</h4>
+                    <p>Optimized for the Arabic World, India, China, US, EU, Brazil.</p>
+                </div>
+                <!-- 6 -->
+                <div class="feature-card glass-card fade-in delay-500">
+                    <div class="feature-icon">
+                        <div class="ai-icon-placeholder" style="width: 60px; height: 60px; font-size: 2rem;">🚀</div>
+                    </div>
+                    <h4>Future-proof platform</h4>
+                    <p>Web today, mobile apps and APIs next.</p>
+                </div>
+            </div>
+            <!-- CTA for Features Section -->
+            <div style="text-align: center; margin-top: 3rem;">
+                <a href="https://app.astromic.ai/" class="btn btn-primary btn-glow">Try Now</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Investors -->
+    <section id="investors" class="investors">
+        <div class="container">
+            <div class="section-header fade-in">
+                <h2>Why Invest in Astromic?</h2>
+                <p class="section-sub">Astrology is a multi-billion-dollar global habit. Astromic unlocks the massive
+                    Arabic market and global growth through AI-native precision.</p>
+            </div>
+
+            <div class="investor-content">
+                <div class="market-value glass-panel fade-in">
+                    <h3>Market Opportunity</h3>
+                    <p>The global astrology market was valued at <strong>$12.8B in 2021</strong> and is projected to
+                        reach <strong>$22.8B by 2031</strong> at a 5.7% CAGR.</p>
+                    <div class="market-chart-container">
+                        <img src="assets/market_chart_v2.svg" alt="Market Growth Chart">
+                    </div>
+
+                    <ul class="market-list">
+                        <li><strong>Online Dominance:</strong><br>Apps like Co-Star generate millions; we target the
+                            next
+                            billion users.</li>
+                        <li><strong>Untapped Giants:</strong><br>MENA, India & China represent massive, underserved
+                            markets.</li>
+                        <li><strong>Wellness Intersection:</strong><br>Part of the $4.5T global wellness economy.</li>
+                    </ul>
+                    <a href="https://app.astromic.ai/" class="btn btn-primary btn-glow" style="margin-top: 2rem;">Try
+                        Now</a>
+                </div>
+
+                <div class="why-invest glass-panel fade-in delay-200">
+                    <h3>Why You Need to Invest</h3>
+                    <p>Astromic bridges the gap between ancient tradition and proprietary AI models.</p>
+                    <div class="invest-visual-container">
+                        <img src="assets/why_invest_v2.svg" alt="Investment Opportunity">
+                    </div>
+                    <ul class="check-list">
+                        <li><strong>Proven Edge:</strong> Working app with seamless onboarding.</li>
+                        <li><strong>Data Moat:</strong> Proprietary multi-tradition dataset refines our AI constantly.
+                        </li>
+                        <li><strong>Scalable Unit Economics:</strong> Low AI inference cost, high LTV via subscriptions.
+                        </li>
+                        <li><strong>Strategic Timing:</strong> AI boom meets wellness trend.</li>
+                    </ul>
+                    <div class="hero-btns investor-btns">
+                        <button id="btn-investor-breakdown" class="btn btn-secondary">Investor Breakdown</button>
+                        <a href="mailto:contact@aiworkx.com?subject=Investor%20Inquiry"
+                            class="btn btn-primary btn-glow">Request Investor Deck</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Investor FAQ Modal -->
+            <div id="investor-modal" class="modal-overlay" aria-hidden="true" style="display: none;">
+                <div class="modal-content glass-panel fade-in-up">
+                    <button class="modal-close" aria-label="Close modal">&times;</button>
+
+                    <div class="section-header">
+                        <h3>Investor Breakdown</h3>
+                        <p class="section-sub">Deep dive into our positioning, differentiation, and market potential.
+                        </p>
+                    </div>
+
+                    <div class="faq-container">
+                        <!-- Q1 -->
+                        <div class="faq-item glass-panel">
+                            <div class="faq-question">
+                                <h4>What problem are you solving?</h4>
+                                <span class="faq-icon">+</span>
+                            </div>
+                            <div class="faq-answer">
+                                <p><strong>Astromic.ai’s solution:</strong> An AI-native astrology engine that takes
+                                    real birth data and transits and turns them into ongoing, conversational guidance
+                                    across love, career, and spirituality, not just one-off reports.</p>
+                                <p>Multi-system (e.g., Vedic and Western) with consistent UX, instead of one-off niche
+                                    apps per tradition.</p>
+                            </div>
+                        </div>
+
+                        <!-- Q2: Target User (NEW) -->
+                        <div class="faq-item glass-panel">
+                            <div class="faq-question">
+                                <h4>Who is the target user?</h4>
+                                <span class="faq-icon">+</span>
+                            </div>
+                            <div class="faq-answer">
+                                <p>Global smartphone users interested in astrology and self-discovery, particularly
+                                    <strong>Millennials and Gen Z</strong>, who already engage with astro content on
+                                    TikTok/Instagram and use mobile-first apps for guidance.
+                                </p>
+                            </div>
+                        </div>
+
+                        <!-- Q3 -->
+                        <div class="faq-item glass-panel">
+                            <div class="faq-question">
+                                <h4>Differentiation vs ChatGPT and other LLMs</h4>
+                                <span class="faq-icon">+</span>
+                            </div>
+                            <div class="faq-answer">
+                                <p><strong>General LLMs (ChatGPT, Gemini, etc.):</strong> Broad but not specialized.
+                                    They lack "house rules" for interpreting Vedic + Western together and have no user
+                                    lifecycle.</p>
+                                <p><strong>Astromic.ai:</strong> Uses LLMs as a component inside a fixed astrological
+                                    engine. We layer proprietary data and safety rails to create a "specialist brain"
+                                    trained and structured for astrology-first guidance.</p>
+                                <p><strong>Essentially:</strong> ChatGPT is a general brain; Astromic is a specialist
+                                    brain trained for astrology.</p>
+                            </div>
+                        </div>
+
+                        <!-- Q4 -->
+                        <div class="faq-item glass-panel">
+                            <div class="faq-question">
+                                <h4>Market growth and opportunity</h4>
+                                <span class="faq-icon">+</span>
+                            </div>
+                            <div class="faq-answer">
+                                <p>The global astrology app market is estimated around <strong>USD ~3B in 2024</strong>,
+                                    projected to reach <strong>USD 9B by 2030</strong> (≈20% CAGR).</p>
+                                <p>India alone is projected to grow to ~USD 1.8B by 2030 (~49% CAGR). AI +
+                                    personalization is a key growth driver, proven by apps like Co–Star.</p>
+                            </div>
+                        </div>
+
+                        <!-- Q5 -->
+                        <div class="faq-item glass-panel">
+                            <div class="faq-question">
+                                <h4>Why invest in Astromic.ai?</h4>
+                                <span class="faq-icon">+</span>
+                            </div>
+                            <div class="faq-answer">
+                                <ul>
+                                    <li><strong>Market Timing:</strong> Clear gap for a multi-system, AI-first platform
+                                        as the market triples to $9B.</li>
+                                    <li><strong>Differentiation:</strong> Deeper AI integration (conversational
+                                        guidance) and multi-system support.</li>
+                                    <li><strong>Network Effects:</strong> Roadmap for data network effects improving
+                                        interpretations over time.</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <!-- Q6: Go-to-Market (NEW) -->
+                        <div class="faq-item glass-panel">
+                            <div class="faq-question">
+                                <h4>What is the Go-to-Market strategy?</h4>
+                                <span class="faq-icon">+</span>
+                            </div>
+                            <div class="faq-answer">
+                                <ul>
+                                    <li><strong>Viral Loops:</strong> Shareable "Cosmic ID" charts designed for social
+                                        media spread.</li>
+                                    <li><strong>Influencer Partnerships:</strong> Collaborations with wellness and
+                                        spiritual creators on TikTok/IG.</li>
+                                    <li><strong>Localization:</strong> Specific campaigns for high-growth regions like
+                                        India (Vedic focus) and MENA (Arabic support).</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <!-- Q7 -->
+                        <div class="faq-item glass-panel">
+                            <div class="faq-question">
+                                <h4>How will Astromic.ai make money?</h4>
+                                <span class="faq-icon">+</span>
+                            </div>
+                            <div class="faq-answer">
+                                <p><strong>Subscription Model:</strong> Freemium base with Premium tiers for in-depth
+                                    birth chart reports, relationship/compatibility features, and personalized timing
+                                    (career, relocation).</p>
+                            </div>
+                        </div>
+
+                        <!-- Q8 -->
+                        <div class="faq-item glass-panel">
+                            <div class="faq-question">
+                                <h4>What is the ROI potential?</h4>
+                                <span class="faq-icon">+</span>
+                            </div>
+                            <div class="faq-answer">
+                                <p>Capturing even a small single-digit percentage of the projected <strong>$9B global
+                                        market</strong> offers revenue potential in the tens of millions per year.</p>
+                                <p>Exit paths include strategic buyers in consumer AI, wellness, dating (Match.com,
+                                    Bumble), or scaling as a profitable global SaaS business.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Contact -->
+        <!-- Contact Section -->
+        <section id="contact" class="contact">
+            <div class="container contact-container">
+                <!-- Left Side: Visual -->
+                <div class="contact-visual-side">
+                    <img src="assets/contact_visual_device.png" alt="Astromic App Interface" class="floating-visual">
+                </div>
+
+                <!-- Right Side: Contact Box (Text + Form) -->
+                <div class="contact-box">
+                    <div class="contact-header">
+                        <h2>Contact Astromic.AI</h2>
+                        <p>For user feedback, partnerships, or investment, reach out any time.</p>
+                    </div>
+
+                    <form class="contact-form" method="POST">
+
+                        <input type="hidden" name="ip" class="field-ip">
+                        <input type="hidden" name="city" class="field-city">
+                        <input type="hidden" name="country" class="field-country">
+                        <input type="hidden" name="platform" class="field-platform">
+
+                        <div class="form-group">
+                            <label for="name">Name</label>
+                            <input type="text" id="name" name="name" required placeholder="Your name">
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="email" id="email" name="email" required placeholder="your@email.com">
+                        </div>
+                        <div class="form-group">
+                            <label for="user_type">Reason</label>
+                            <select id="user_type" name="user_type">
+                                <option value="User">User Feedback</option>
+                                <option value="Investor">Investor Inquiry</option>
+                                <option value="Partner">Partnership</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Message</label>
+                            <textarea id="message" name="message" rows="4" required
+                                placeholder="How can we help?"></textarea>
+                        </div>
+
+                        <!-- Status Message -->
+                        <div id="form-status"
+                            style="display: none; padding: 10px; border-radius: 8px; margin-bottom: 1rem; text-align: center; font-size: 0.9rem;">
+                        </div>
+
+                        <!-- Honeypot for bots -->
+                        <input type="text" name="honey_pot" style="display:none !important;" tabindex="-1"
+                            autocomplete="off">
+
+                        <button type="submit" class="btn btn-primary full-width">Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="footer"
+            style="text-align: center; padding: 3rem 0; font-size: 0.9rem; color: var(--text-muted);">
+            <div class="container">
+                <p style="margin-bottom: 0.5rem;">&copy; 2026 Astromic. AI-native global astrology.</p>
+                <p>Powered by <a href="https://aiworkx.com" target="_blank" rel="noopener noreferrer"
+                        style="color: var(--neon-cyan); text-decoration: none;">AIworkX (aiworkx.com)</a> | <a
+                        href="privacy.html"
+                        style="color: var(--text-muted); text-decoration: underline; font-size: 0.85rem;">Privacy
+                        Policy</a>
+                </p>
+            </div>
+        </footer>
+
+        <!-- Fixed Waitlist Widget -->
+        <div class="hero-capture glass-panel fade-in-up delay-100" id="waitlist-widget">
+            <button id="close-waitlist" aria-label="Close waitlist"
+                style="position: absolute; top: 10px; right: 10px; background: none; border: none; color: rgba(255,255,255,0.5); cursor: pointer; font-size: 1.2rem;">&times;</button>
+            <p class="capture-title">✨ We are enabling subscriptions soon.<br>Join the waitlist for your
+                <strong>First Year Free</strong>:
+            </p>
+            <form class="capture-form" method="POST">
+                <input type="hidden" name="ip" class="field-ip">
+                <input type="hidden" name="city" class="field-city">
+                <input type="hidden" name="country" class="field-country">
+                <input type="hidden" name="platform" class="field-platform">
+
+                <!-- Honeypot -->
+                <input type="text" name="honey_pot" style="display:none !important;" tabindex="-1" autocomplete="off">
+
+                <input type="email" name="email" placeholder="Enter your email..." required>
+                <button type="submit" class="btn-sm btn-primary">Join Waitlist</button>
+            </form>
+            <p class="capture-sub">Secure your free early-bird account now.</p>
+        </div>
+
+        <script src="script.js"></script>
+</body>
+
+</html>
