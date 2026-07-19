@@ -293,72 +293,7 @@ const init = () => {
         });
     }
 
-    // Hero Email Capture Handling (AJAX)
-    const captureForm = document.querySelector('.capture-form');
-    if (captureForm) {
-        captureForm.addEventListener('submit', async (e) => {
-            e.preventDefault();
-            const btn = captureForm.querySelector('button');
-            const originalText = btn.innerText;
 
-            btn.innerText = '...';
-            btn.disabled = true;
-
-            const data = new FormData(captureForm);
-
-            // 🕒 Inject Local Time
-            const now = new Date();
-            data.append('date', now.toLocaleDateString('en-CA'));
-            data.append('time', now.toLocaleTimeString('en-US', { hour12: true }));
-
-            try {
-                // Post to our local Vercel Proxy
-                // We send JSON, and the proxy converts to what GAS needs
-                const payload = Object.fromEntries(data.entries());
-
-                await fetch('/api/submit', {
-                    method: 'POST',
-                    headers: {
-                        'Content-Type': 'application/json'
-                    },
-                    body: JSON.stringify(payload)
-                });
-
-                // Assume success if no error thrown
-                btn.style.display = 'none'; // Hide button to avoid alignment issues
-
-                // Show a clean success message below or inside the form
-                const successMsg = document.createElement('div');
-                successMsg.className = 'success-message';
-                successMsg.innerHTML = '✅ <strong>Reserved!</strong><br>Your Free Subscription is confirmed.';
-                successMsg.style.color = '#22d3ee';
-                successMsg.style.marginTop = '10px';
-                successMsg.style.textAlign = 'center';
-                successMsg.style.lineHeight = '1.4';
-                captureForm.appendChild(successMsg);
-
-                captureForm.reset();
-
-                setTimeout(() => {
-                    successMsg.remove();
-                    btn.style.display = 'block';
-                    btn.innerText = originalText;
-                    btn.disabled = false;
-                    btn.style.background = '';
-                }, 5000);
-
-            } catch (error) {
-                console.error(error);
-                btn.innerText = 'Error';
-                btn.style.background = 'tomato';
-                setTimeout(() => {
-                    btn.innerText = originalText;
-                    btn.disabled = false;
-                    btn.style.background = '';
-                }, 3000);
-            }
-        });
-    }
 
     // Intersection Observer for Fade-in Animations
     const observerOptions = {
