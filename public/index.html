@@ -78,66 +78,6 @@
     <div class="stars-bg"></div>
     <canvas id="bg-canvas"></canvas>
 
-    <!-- Coming Soon Overlay (Auto-Hides on Jan 1) -->
-    <div id="launch-overlay">
-        <!-- Background Stars -->
-        <div class="stars-bg"></div>
-
-        <div class="launch-content fade-in-up">
-            <h1 class="launch-title">Astromic.AI</h1>
-            <p class="launch-subtitle" style="margin-bottom: 1rem;">Get ready for AI-powered global astrology like never
-                before.</p>
-            <p style="font-size: 1rem; color: #d946ef; margin-bottom: 2rem; letter-spacing: 1px; font-weight: 500;">
-                Personalized insights • Multi-tradition wisdom • Cosmic magic</p>
-
-            <p style="font-size: 0.95rem; opacity: 0.8; margin-bottom: 2.5rem; line-height: 1.6;">Stay tuned — we're
-                aligning the stars for something extraordinary.<br>Global launch sequence initiated...</p>
-
-            <div class="countdown-container">
-                <div class="countdown-item">
-                    <span id="days" class="countdown-val">00</span>
-                    <span class="countdown-label">Days</span>
-                </div>
-                <div class="countdown-item">
-                    <span id="hours" class="countdown-val">00</span>
-                    <span class="countdown-label">Hours</span>
-                </div>
-                <div class="countdown-item">
-                    <span id="minutes" class="countdown-val">00</span>
-                    <span class="countdown-label">Mins</span>
-                </div>
-                <div class="countdown-item">
-                    <span id="seconds" class="countdown-val">00</span>
-                    <span class="countdown-label">Secs</span>
-                </div>
-            </div>
-
-            <p style="margin-bottom: 1rem; color: #fff;">Get early access & updates:</p>
-
-            <!-- Reusing the secure form handler logic -->
-            <form class="contact-form" method="POST" id="launch-form">
-                <input type="hidden" name="ip" class="field-ip">
-                <input type="hidden" name="city" class="field-city">
-                <input type="hidden" name="country" class="field-country">
-                <input type="hidden" name="platform" class="field-platform">
-                <!-- Honeypot -->
-                <input type="text" name="honey_pot" style="display:none !important;" tabindex="-1" autocomplete="off">
-
-                <div style="display: flex; gap: 10px;">
-                    <input type="email" name="email" required placeholder="Enter your email"
-                        style="flex: 1; margin-bottom: 0;">
-                    <button type="submit" class="btn btn-primary btn-glow"
-                        style="width: auto; whitespace: nowrap;">Notify Me</button>
-                </div>
-                <div id="launch-form-status" style="margin-top: 10px; font-size: 0.9rem;"></div>
-            </form>
-        </div>
-
-        <!-- Powered By Footer -->
-        <a href="https://aiworkx.com" target="_blank" rel="noopener noreferrer" class="powered-by-link">
-            Powered by <span class="glow-text">AIworkX</span>
-        </a>
-    </div>
 
     <!-- Navigation -->
     <nav class="navbar">
@@ -646,7 +586,7 @@
                         <p>For user feedback, partnerships, or investment, reach out any time.</p>
                     </div>
 
-                    <form class="contact-form" method="POST">
+                    <form class="contact-form" method="POST" id="main-contact-form">
 
                         <input type="hidden" name="ip" class="field-ip">
                         <input type="hidden" name="city" class="field-city">

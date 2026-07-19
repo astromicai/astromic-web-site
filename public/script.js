@@ -84,118 +84,7 @@ const init = () => {
         }
     };
 
-    // --- Auto-Launch Countdown    // Launch Date - Force Passed for Immediate Launch
-    const launchDate = new Date('January 1, 2025 00:00:00').getTime();
-    const overlay = document.getElementById('launch-overlay');
-    const daysEl = document.getElementById('days');
-    const hoursEl = document.getElementById('hours');
-    const minutesEl = document.getElementById('minutes');
-    const secondsEl = document.getElementById('seconds');
 
-    function updateCountdown() {
-        const now = new Date().getTime();
-        const distance = launchDate - now;
-
-        if (distance < 0) {
-
-            // LAUNCHED! Hide overlay
-            if (overlay) overlay.style.display = 'none';
-            document.body.style.overflow = 'auto'; // Enable scroll
-
-            // Ensure canvas is in body for normal site operation
-            const canvas = document.getElementById('bg-canvas');
-            if (canvas && canvas.parentElement !== document.body) {
-                document.body.insertBefore(canvas, document.body.firstChild);
-            }
-
-            if (timerInterval) clearInterval(timerInterval);
-            return;
-        }
-
-        // --- OVERLAY MODE ---
-        // Move canvas INSIDE the overlay so it sits on top of the overlay background
-        const canvas = document.getElementById('bg-canvas');
-        if (overlay && canvas && canvas.parentElement !== overlay) {
-            // Insert as first child so it's behind content but above background
-            overlay.insertBefore(canvas, overlay.firstChild);
-            // Ensure opacity is full
-            canvas.style.opacity = '1';
-        }
-
-        // Lock scroll while overlay is active
-        if (overlay && overlay.style.display !== 'none') {
-            document.body.style.overflow = 'hidden';
-        }
-
-
-        const days = Math.floor(distance / (1000 * 60 * 60 * 24));
-        const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-        const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-        const seconds = Math.floor((distance % (1000 * 60)) / 1000);
-
-        if (daysEl) daysEl.innerText = days.toString().padStart(2, '0');
-        if (hoursEl) hoursEl.innerText = hours.toString().padStart(2, '0');
-        if (minutesEl) minutesEl.innerText = minutes.toString().padStart(2, '0');
-        if (secondsEl) secondsEl.innerText = seconds.toString().padStart(2, '0');
-    }
-
-    // Initial check
-    let timerInterval;
-    updateCountdown();
-    timerInterval = setInterval(updateCountdown, 1000);
-
-    // Connect Launch Form to existing handler logic
-    const launchForm = document.getElementById('launch-form');
-    if (launchForm) {
-        launchForm.addEventListener('submit', (e) => {
-            e.preventDefault();
-            const btn = launchForm.querySelector('button');
-            const status = document.getElementById('launch-form-status');
-            const originalText = btn.innerText;
-
-            btn.innerText = 'Sending...';
-            btn.disabled = true;
-
-            // Reuse the main form handler logic if possible, or simple fetch
-            // Using the global globalFormHandler logic we established? 
-            // Let's just manually fetch to ensure it works isolated
-            const formData = new FormData(launchForm);
-            const data = Object.fromEntries(formData.entries());
-            data.formType = 'waitlist_launch'; // specific tag
-            data.type = 'subscription'; // explicit type for backend
-
-            fetch('/api/submit', {
-                method: 'POST',
-                headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify(data)
-            })
-                .then(response => {
-                    if (response.ok) {
-                        if (status) {
-                            status.style.color = '#4ade80';
-                            status.innerText = "You're on the list. We'll be in touch.";
-                        }
-                        launchForm.reset();
-                    } else {
-                        throw new Error('Network response was not ok');
-                    }
-                })
-                .catch(error => {
-                    if (status) {
-                        status.style.color = '#f87171';
-                        status.innerText = "Error. Please try again.";
-                    }
-                    console.error('Error:', error);
-                })
-                .finally(() => {
-                    btn.innerText = 'Sent!';
-                    setTimeout(() => {
-                        btn.innerText = originalText;
-                        btn.disabled = false;
-                    }, 3000);
-                });
-        });
-    }
 
     // Send "Visitor Log" to Google Sheet
     const postVisitorLog = (ipData) => {
@@ -233,7 +122,7 @@ const init = () => {
 
     // Contact Form Handling
     // Contact Form Handling (AJAX)
-    const contactForm = document.querySelector('.contact-form');
+    const contactForm = document.getElementById('main-contact-form');
     const status = document.getElementById('form-status');
 
     if (contactForm) {
